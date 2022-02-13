@@ -9,13 +9,15 @@ import (
 )
 
 func main() {
+	fileFlag := flag.String("filename", "game-list", "List identifier.")
+
 	purgeFlag := flag.Bool("purge", false, "Delete every compare file except for the two most recent ones.")
 
 	flag.Parse()
 
 	var config = getConfig()
 
-	var fileInfos = IOReadDir(config.Config.FileCompareFolder, config.Config.FilePrefix)
+	var fileInfos = IOReadDir(config.Config.FileCompareFolder, config.Config.FilePrefix+*fileFlag+"--")
 
 	if len(fileInfos) < 2 {
 		fmt.Println("There are not enough files to compare.")

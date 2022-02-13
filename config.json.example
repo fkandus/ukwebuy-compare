@@ -2,6 +2,6 @@
     "config": {
         "diffCommand" : "FULLPATH-TO-DIFF-COMMAND",
         "fileCompareFolder" : "FULLPATH-TO-FOLDER-WITH-UKWEBUYFINDER-FILES",
-        "filePrefix" : "trade-games-"
+        "filePrefix" : "result-"
     }
 }

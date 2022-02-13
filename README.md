@@ -13,6 +13,7 @@ This will load the diff tool set in the config with the comparison between the l
 The `compare` executable accepts the following parameters:
 * `-help`: Display a list with the rest of the parameters.
 * `-purge`: Delete every compare file except for the two most recent ones.
+* `-filename`: Identify which output list from Finder to compare. Default is `game-list`.
 
 ## Config File
 
