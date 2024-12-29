@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"io/fs"
 	"os"
 	"os/exec"
 	"sort"
@@ -44,7 +45,7 @@ func main() {
 	fmt.Println("Comparison finished.")
 }
 
-func getAllFiles(fileInfos []os.FileInfo) []string {
+func getAllFiles(fileInfos []fs.DirEntry) []string {
 	var files []string
 
 	for _, fileInfo := range fileInfos {

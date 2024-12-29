@@ -1,7 +1,7 @@
 package main
 
 import (
-	"io/ioutil"
+	"io/fs"
 	"log"
 	"os"
 	"path/filepath"
@@ -29,14 +29,14 @@ func getFileList(folder string, prefix string) []string {
 }
 
 // IOReadDir Returns all the files in the "root" folder that start with "prefix"
-func IOReadDir(root string, prefix string) []os.FileInfo {
-	var files []os.FileInfo
-	fileInfo, err := ioutil.ReadDir(root)
+func IOReadDir(root string, prefix string) []fs.DirEntry {
+	var files []fs.DirEntry
+	dirEntry, err := os.ReadDir(root)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	for _, file := range fileInfo {
+	for _, file := range dirEntry {
 		if strings.HasPrefix(file.Name(), prefix) {
 			files = append(files, file)
 		}
